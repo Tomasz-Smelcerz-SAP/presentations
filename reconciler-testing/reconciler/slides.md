@@ -264,7 +264,7 @@ ul {
 
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 
 </style>
@@ -314,7 +314,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -366,7 +366,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -418,7 +418,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -464,7 +464,7 @@ h1 {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -513,7 +513,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -562,7 +562,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -603,7 +603,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -653,7 +653,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -702,7 +702,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -748,7 +748,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -797,7 +797,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -846,7 +846,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -896,7 +896,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -945,7 +945,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -994,7 +994,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -1005,12 +1005,17 @@ transition: slide-left
 # Summary
 
 <br/>
-The proposed changes:
+
+<v-click>
+
+Proposed changes:
+
+</v-click>
 
 <v-clicks>
 
 - Introduce dependency injection to split the reconciliation logic into multiple independent components ("handlers")
-- Allow to keep the method signature and implementation code (almost) unchanged
+- Keep the method signature and implementation code (almost) unchanged
 
 </v-clicks>
 
@@ -1018,10 +1023,12 @@ The proposed changes:
 
 The procedure:
 
-- Move every existing `Reconciler`method to a method on some new component (handler)
-- Provide a field with a function value for every dependency (can be an interface, to be decided)
+- Split existing `Reconciler` type into many components ("handlers")
+- Every method defined on the `Reconciler` type should be extracted to a separate component.
+- When one component calls another...
+    - Provide a field with a function value for this dependency (can also be an interface, to be decided)
 - Unit-Test the component(s) :)
-- Provide proper wiring code for all handlers so that reconciliation can be performed without any changes in logic.
+- Provide proper wiring code for all components so that reconciliation is executed without any changes in logic.
 
 </v-click>
 
@@ -1039,7 +1046,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
@@ -1067,7 +1074,7 @@ ul {
 }
 .personal {
   color: #2B90B6;
-  font-weight:900;
+  font-weight:500;
 }
 </style>
 
